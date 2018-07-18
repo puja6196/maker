@@ -22,11 +22,11 @@ public class DAOImplUser implements DAOUser1
 			  PreparedStatement pstmt=null;
 				try {
 					 pstmt = con.prepareStatement("insert into pujabook3 values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
-					 pstmt.setString(1,userInfo.getUserCode());
+					 pstmt.setLong(1,userInfo.getUserCode());
 					 pstmt.setString(2,userInfo.getUserName());
 					 pstmt.setString(3,userInfo.getUserAddress1());
 					 pstmt.setString(4,userInfo.getUserAddress2());
-					 pstmt.setString(5,userInfo.getUserPinCode());
+					 pstmt.setLong(5,userInfo.getUserPinCode());
 					 pstmt.setString(6,userInfo.getUserEmailAddress());
 					 pstmt.setString(7,userInfo.getPrimaryContactPerson());
 					 pstmt.setString(8,userInfo.getRecordStatus());
@@ -64,7 +64,7 @@ public class DAOImplUser implements DAOUser1
 			 PreparedStatement pstmt=null;
 				try {
 					 pstmt = con.prepareStatement("delete from pujabook3 where  BookId=?");
-					 pstmt.setString(1,userInfo.getUserCode());
+					 pstmt.setLong(1,userInfo.getUserCode());
 					 pstmt.executeUpdate();
 			        
 				}
@@ -131,24 +131,23 @@ public class DAOImplUser implements DAOUser1
 			  PreparedStatement pstmt=null;
 				try {
 					 pstmt = con.prepareStatement("select * from pujabook3 where bookid=?");
-					 pstmt.setString(1,userInfo.getUserCode());
+					 pstmt.setLong(1,userInfo.getUserCode());
 					ResultSet rs= pstmt.executeQuery();
 					while(rs.next())
 					{
-						userInfo.setUserCode(rs.getString(1));
+						userInfo.setUserCode(rs.getLong(1));
 						userInfo.setUserName(rs.getString(2) );
 						userInfo.setUserAddress1(rs.getString(3));
 						userInfo.setUserAddress2(rs.getString(4) );
-						userInfo.setUserPinCode(rs.getString(5) );	
+						userInfo.setUserPinCode(rs.getLong(5) );	
 						userInfo.setUserEmailAddress(rs.getString(6) );
-						userInfo.setUserContactNo(rs.getString(7) );
-						userInfo.setPrimaryContactPerson(rs.getString(8));
-						userInfo.setRecordStatus(rs.getString(9) );
-						userInfo.setFlag(rs.getString(10) );	
-						userInfo.setCreateDate(rs.getString(11) );
-						userInfo.setCreatedBy(rs.getString(12));
-						userInfo.setModifiedDate(rs.getString(13) );
-						userInfo.setModifiedBy(rs.getString(14) );	
+						userInfo.setPrimaryContactPerson(rs.getString(7));
+						userInfo.setRecordStatus(rs.getString(8) );
+						userInfo.setFlag(rs.getString(9) );	
+						userInfo.setCreateDate(rs.getString(10) );
+						userInfo.setCreatedBy(rs.getString(11));
+						userInfo.setModifiedDate(rs.getString(12) );
+						userInfo.setModifiedBy(rs.getString(13) );	
 						
 					} 
 			         
@@ -172,10 +171,10 @@ public class DAOImplUser implements DAOUser1
 			
 		        }
 	}
-		
-		public List<UserInfo> viewAll() 
+		/*@Override
+		public List<UserInfo> viewall() 
 		{  
-			List<UserInfo> list=new ArrayList<UserInfo>();
+			List<UserInfo> list=new ArrayList<>();
 			 PreparedStatement pstmt=null;
 				try {
 					 
@@ -184,20 +183,11 @@ public class DAOImplUser implements DAOUser1
 					while(rs.next())
 					{
 					UserInfo userInfo=new UserInfo();
-					userInfo.setUserCode(rs.getString(1));
-					userInfo.setUserName(rs.getString(2) );
-					userInfo.setUserAddress1(rs.getString(3));
-					userInfo.setUserAddress2(rs.getString(4) );
-					userInfo.setUserPinCode(rs.getString(5) );	
-					userInfo.setUserEmailAddress(rs.getString(6) );
-					userInfo.setUserContactNo(rs.getString(7) );
-					userInfo.setPrimaryContactPerson(rs.getString(8));
-					userInfo.setRecordStatus(rs.getString(9) );
-					userInfo.setFlag(rs.getString(10) );	
-					userInfo.setCreateDate(rs.getString(11) );
-					userInfo.setCreatedBy(rs.getString(12));
-					userInfo.setModifiedDate(rs.getString(13) );
-					userInfo.setModifiedBy(rs.getString(14) );		
+					userInfo.setBookId(rs.getString(1));
+					userInfo.setBookName(rs.getString(2) );
+					userInfo.setAuthor(rs.getString(3));
+					userInfo.setBook(rs.getString(4) );
+					userInfo.setPrice(rs.getString(5) );		
 					 list.add(userInfo);
 					} 
 			         
@@ -224,5 +214,5 @@ public class DAOImplUser implements DAOUser1
 			
 		}
 	}
-
-
+}*/
+}

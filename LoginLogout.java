@@ -24,7 +24,6 @@ public class LoginLogout extends HttpServlet {
 		
         String username=request.getParameter("username");
         String password=request.getParameter("password");
-        response.sendRedirect("USER.jsp");
 	}
        
 

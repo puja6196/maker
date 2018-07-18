@@ -2,22 +2,21 @@ package com.nucleus.Connection;
 
 public class UserInfo 
 {  
-	private String userCode;
+	private long userCode;
 	private String userName;
 	private String userAddress1;
 	private String userAddress2;
-	private String userPinCode;
+	private long userPinCode;
 	private String userEmailAddress;
-	private String userContactNo;
 	private String primaryContactPerson;
 	private String recordStatus;
 	private String flag;
-	
 	private String createDate;
 	private String createdBy;
 	private String modifiedDate;
 	private String modifiedBy;
-	
+	private String authorizedDate;
+	private String authorizedBy;
 	public String getCreateDate() {
 		return createDate;
 	}
@@ -42,12 +41,23 @@ public class UserInfo
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
 	}
-	
-	public String getUserCode() {
+	public String getAuthorizedDate() {
+		return authorizedDate;
+	}
+	public void setAuthorizedDate(String authorizedDate) {
+		this.authorizedDate = authorizedDate;
+	}
+	public String getAuthorizedBy() {
+		return authorizedBy;
+	}
+	public void setAuthorizedBy(String authorizedBy) {
+		this.authorizedBy = authorizedBy;
+	}
+	public long getUserCode() {
 		return userCode;
 	}
-	public void setUserCode(String usercode2) {
-		this.userCode = usercode2;
+	public void setUserCode(long userCode) {
+		this.userCode = userCode;
 	}
 	public String getUserName() {
 		return userName;
@@ -67,10 +77,10 @@ public class UserInfo
 	public void setUserAddress2(String userAddress2) {
 		this.userAddress2 = userAddress2;
 	}
-	public String getUserPinCode() {
+	public long getUserPinCode() {
 		return userPinCode;
 	}
-	public void setUserPinCode(String userPinCode) {
+	public void setUserPinCode(long userPinCode) {
 		this.userPinCode = userPinCode;
 	}
 	public String getUserEmailAddress() {
@@ -96,12 +106,6 @@ public class UserInfo
 	}
 	public void setFlag(String flag) {
 		this.flag = flag;
-	}
-	public String getUserContactNo() {
-		return userContactNo;
-	}
-	public void setUserContactNo(String userContactNo) {
-		this.userContactNo = userContactNo;
 	}
 	
 
